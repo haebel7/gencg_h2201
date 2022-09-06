@@ -5,8 +5,12 @@ let tileSize;
 let numberOfTilesX;
 let numberOfTilesY;
 
-let randomColor = (255, 255, 255);
 let bgColor = (0, 0, 0);
+let colorModifier = 0;
+let colorIncrement = 3;
+
+let videoModifier = 0;
+let videoIncrement = 2;
 
 function setup() {
   createCanvas(1600, 1600);
@@ -14,6 +18,8 @@ function setup() {
   frameRate(3);
   noLoop();
   //noSmooth();
+
+  colorMode(HSB, 100);
 
   strokeW = 0;
   density = 1;
@@ -30,16 +36,17 @@ function draw() {
   stroke(0, 0, 0);
 
   for (let i = 0; i < numberOfTilesX; i++) {
+    colorModifier += colorIncrement;
     for (let j = 0; j < numberOfTilesY; j++) {
-      drawTile(i * tileSize, j * tileSize, tileSize);
+      drawTile(i * tileSize, j * tileSize);
     }
   }
 }
 
-function drawTile(coordX, coordY, size) {
+function drawTile(coordX, coordY) {
   //fill(255, 255, 255);
-  //square(coordX, coordY, size);
-  fill(255, 255, 255);
+  //square(coordX, coordY, tileSize);
+  fill((40 + colorModifier) % 100, 100, 100);
   let randoo;
   randoo = Math.random();
   if (randoo < 0.5) {
