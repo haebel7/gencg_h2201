@@ -21,7 +21,7 @@ var fun = function lang(l) {
 
 
 {% raw %}
-<iframe src="content/day01/01/embed.html" width="100%" height="450" frameborder="no"></iframe>
+<iframe src="content/day01/01/embed.html" width="100%" height="100%" frameborder="no"></iframe>
 {% endraw %}
 
 # Day 02
