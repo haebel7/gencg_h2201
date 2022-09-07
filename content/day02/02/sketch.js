@@ -13,7 +13,7 @@ let videoModifier = 0;
 let videoIncrement = 2;
 
 function setup() {
-  createCanvas(1600, 1600);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   frameRate(3);
   noLoop();

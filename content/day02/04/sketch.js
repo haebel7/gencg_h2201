@@ -12,7 +12,7 @@ let rotatione = 0;
 let tiles = [];
 
 function setup() {
-  createCanvas(1600, 1600, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   angleMode(DEGREES);
 
   //frameRate(5);
@@ -28,7 +28,7 @@ function setup() {
 
   strokeW = 2;
   density = 1;
-  tileSize = 100;
+  tileSize = 80;
 
   numberOfTilesX = width / tileSize + 1;
   numberOfTilesY = height / tileSize + 1;

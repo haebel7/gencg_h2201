@@ -11,14 +11,14 @@ let randomColor = (255, 255, 255);
 let bgColor = (200, 200, 200);
 
 function setup() {
-  createCanvas(1600, 1600);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   noSmooth();
 
   strokeW = 0.3;
   density = 1;
 
-  generatePoints(80);
+  generatePoints(30);
 }
 
 function draw() {

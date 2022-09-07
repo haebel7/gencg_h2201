@@ -9,7 +9,7 @@ let randomColor = (255, 255, 255);
 let bgColor = (0, 0, 0);
 
 function setup() {
-  createCanvas(1600, 1600);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   frameRate(3);
   noLoop();

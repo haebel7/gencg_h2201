@@ -17,7 +17,7 @@ let videoIncrement = 2;
 let tiles = [];
 
 function setup() {
-  createCanvas(1600, 1600);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   frameRate(8);
   //noLoop();
@@ -27,7 +27,7 @@ function setup() {
 
   strokeW = 0;
   density = 1;
-  tileSize = 100;
+  tileSize = 80;
 
   numberOfTilesX = width / tileSize + 1;
   numberOfTilesY = height / tileSize + 1;
