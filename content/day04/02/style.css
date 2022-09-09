@@ -1,0 +1,15 @@
+.pageName {
+    position: absolute;
+    border:none;
+    background-color: transparent;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    top: 30px;
+    left: 55px;
+    font-size: x-large;
+}
+
+.colorPicker {
+    position: absolute;
+    right: 10px;
+    top: 31px;
+}
