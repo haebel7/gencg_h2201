@@ -12,10 +12,3 @@ This worked out surprisingly fast and I even had the time to animate it with eve
 {% raw %}
 <iframe src="content/day01/01/embed.html" width="100%" height="450px" frameborder="no"></iframe>
 {% endraw %}
-
-
-
-![Day01](https://haebel7.github.io/gencg_h2201/day01.md)
-![Day02](https://haebel7.github.io/gencg_h2201/day02.md)
-![Day03](https://haebel7.github.io/gencg_h2201/day03.md)
-![Day04](https://haebel7.github.io/gencg_h2201/day04.md)
