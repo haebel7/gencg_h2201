@@ -5,7 +5,8 @@ let originAngle = 2.0;
 let angleIncrement = 1;
 
 let angle = 2.0;
-let offset = 800;
+let offsetX;
+let offsetY;
 let scalar = 1.5;
 let speed = 1.2;
 let radius = 2;
@@ -22,7 +23,7 @@ let smallScalar = 1.5;
 let smallSpeed = 3.3;
 
 function setup() {
-  createCanvas(1600, 1600);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   frameRate(60)
   //noLoop();
@@ -32,6 +33,8 @@ function setup() {
 
   strokeW = 0.3;
   density = 1;
+  offsetX = width / 2;
+  offsetY = height / 2;
 
 }
 
@@ -50,8 +53,8 @@ function draw() {
     spiralAlpha += 0.5;
     spiralColor.setAlpha(spiralAlpha);
     radius += 0.1;
-    var x = offset + cos(angle) * scalar;
-    var y = offset + sin(angle) * scalar;
+    var x = offsetX + cos(angle) * scalar;
+    var y = offsetY + sin(angle) * scalar;
     fill(spiralColor);
     ellipse(x, y, radius);
     angle += speed;
@@ -75,8 +78,8 @@ function draw() {
     g: 0,
     b: 0
   };
-  var smallBallX = offset + cos(smallAngle+180) * smallScalar;
-  var smallBallY = offset + sin(smallAngle+180) * smallScalar;
+  var smallBallX = offsetX + cos(smallAngle+180) * smallScalar;
+  var smallBallY = offsetY + sin(smallAngle+180) * smallScalar;
   smallRadius = (smallRadius + 0.3);
   fill(200, 200, 100, 185);
   strokeWeight(2);
