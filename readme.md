@@ -7,7 +7,7 @@ As a first task to get into p5js again, I tried to program the Wall Drawing show
 
 ![Wall Drawing](content/day01/test.jpg)
 
-![Own Attempt](content/day01/Screenshot_1.jpg)
+![Own Attempt](content/day01/Screenshot_1.png)
 
 This worked out surprisingly fast and I even had the time to animate it with every point individually moving around the canvas.
 
