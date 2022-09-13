@@ -2,6 +2,10 @@
 
 ## First Inputs
 
+### Computing without computer
+game
+beach
+
 ### Replicating the Wall Drawing by Sollewit
 As a first task to get into p5js again, I tried to program the Wall Drawing shown in the examples from scratch.
 
