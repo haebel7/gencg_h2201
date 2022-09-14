@@ -2,6 +2,12 @@
 
 ## Pixels
 
+### DISCLAIMER
+The usage of the webcam in the following demos was only tested in Google Chrome.
+Other browsers have shown to display certain elements at a wrong position or not at all.
+It is recommended to use the Chrome browser for this page. Otherwise, screenshots of the results are also provided.
+Please also make sure that there isn't any other website using the webcam at the same time as this one.
+
 ### The Idea
 For this theme, I wanted to do something with the webcam footage. Staying with the theme of pixels, I started out with the example that pixelates the webcam, provided here: https://codepen.io/gu-ma/pen/LggyKa
 Afterwards, I thought about how I could put more focus on the individual pixels and how to make them more interesting. This resulted in this first sketch, where every pixel consists of a small camera feed:
@@ -22,10 +28,16 @@ After a little bit of searching, I finally came up with a solution to this probl
 
 ### Adding Animation
 In a last step, I wanted to somehow animate this whole image. Fitting to the theme of images consisting of smaller images would be an endless zoom into one of the smaller videos, revealing that it again consists of many smaller videos.
-For this step I made use of the scaling feature to scale up the whole canvas, zooming into the middle of it. The middlemost video will already consist of a second iteration of the pixelated image, which can be zoomed into again. After one loop of the zoom-in, the zoom gets reset, repeating the endless cycle:
+For this step I made use of the scaling feature to scale up the whole canvas, zooming into the middle of it. The middlemost video will already consist of a second iteration of the pixelated image, which can be zoomed into again. After one loop of the zoom-in, the zoom gets reset, repeating the endless cycle.
+
+Because of the mentioned difficulties with the display of this certain piece, I have linked to the seperate embed.html file here: [Animated Version](content/day07/02/embed.html)
+
+In case this still doesn't work, I have also made this screenshot, showing the animation mid-zoom:
+
+![Screenshot Animated](content/day07/Screenshot_2.png)
 
 {% raw %}
-<iframe src="content/day07/02/embed.html" width="100%" height="450px" frameborder="no"></iframe>
+<iframe src="content/day07/02/embed.html" width="100%" height="500px" frameborder="no"></iframe>
 {% endraw %}
 
 ### Final Thoughts

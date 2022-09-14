@@ -5,7 +5,7 @@
 ### Visualization of Time
 For this task, I wanted to create something clock-like with an element moving in a circle, but still constantly moving forward. With this in mind I decided to create an infinitely moving spiral with an object travelling along the spiral:
 
-![Spiral Sketch](content/day01/test.jpg)
+![Spiral Sketch](content/day03/notes.jpg)
 
 The first thing I did to achieve this was to create a spiral originating from the middle of the screen:
 

@@ -1,13 +1,20 @@
 # Day 01
 
-## First Inputs
+## Computing without computer
 
-### Computing without computer
-game
-beach
+### Sprouts
+The very first game I tried out was the "Sprouts" game, competing against someone else:
 
+![Sprouts](content/day01/sprouts.jpg)
+
+### The Beach
+The beach drawing was the second analogue exercise I did in a team of four people. Everyone was taking turns placing dots on the canvas, until we had a pretty dense dot pattern.
+
+![The Beach](content/day01/TheBeach.jpg)
+
+## First p5.js exercise
 ### Replicating the Wall Drawing by Sollewit
-As a first task to get into p5js again, I tried to program the Wall Drawing shown in the examples from scratch.
+As a first task to get into p5.js again, I tried to program the Wall Drawing shown in the examples from scratch.
 
 ![Wall Drawing](content/day01/test.jpg)
 
