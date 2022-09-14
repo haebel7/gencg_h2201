@@ -17,6 +17,7 @@ Afterwards, I made it move by slightly tilting the spiral in every frame, creati
 <iframe src="content/day03/02/embed.html" width="100%" height="1600px" frameborder="no"></iframe>
 {% endraw %}
 
+### The Difficulty of Synchronized Spirals
 For the rest of the day, I tried to add some more circles travelling at different speeds. This turned out to be much more difficult than I thought, and in the end I could only add one more ball which starts from the center and slowly moves past the other one.
 Because I couldn't get this one to be completely displayed in this readme, I have a screenshot of the whole image here:
 

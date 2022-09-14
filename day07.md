@@ -2,10 +2,11 @@
 
 ## Pixels
 
-### DISCLAIMER
+### ! DISCLAIMER !
 The usage of the webcam in the following demos was only tested in Google Chrome.
 Other browsers have shown to display certain elements at a wrong position or not at all.
 It is recommended to use the Chrome browser for this page. Otherwise, screenshots of the results are also provided.
+
 Please also make sure that there isn't any other website using the webcam at the same time as this one.
 
 ### The Idea
@@ -35,10 +36,6 @@ Because of the mentioned difficulties with the display of this certain piece, I 
 In case this still doesn't work, I have also made this screenshot, showing the animation mid-zoom:
 
 ![Screenshot Animated](content/day07/Screenshot_2.png)
-
-{% raw %}
-<iframe src="content/day07/02/embed.html" width="100%" height="500px" frameborder="no"></iframe>
-{% endraw %}
 
 ### Final Thoughts
 For the final animation, I would have also liked to add a slow fade-in effect to the small middle image, so that it wouldn't just "pop" into existence after the cycle repeats.

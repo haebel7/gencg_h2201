@@ -12,9 +12,11 @@ This first version lets the user draw with the mouse, but just randomly places d
 
 The input is recognized through the "mouseDragged()" function, which runs whenever the mouse is clicked and dragged across the canvas. This allows me to really only create new scribbles when the mouse is actually moved, creating a better immersion for the user who seems to be partially responsible for the chaos that is happening.
 
+### Upgrading the Tool
+
 ![Screenshot Drawing Tool](content/day04/Screenshot_1.png)
 
-The screenshot also already shows an upgraded background and a feature to give your drawing a title.
+The screenshot already shows an upgraded background and a feature to give your drawing a title.
 
 I then added multiple different drawing tools and colors to choose from, as well as a feature to download the edited canvas:
 
@@ -27,11 +29,3 @@ Here, the pen has been improved to create connecting lines and always start from
 The "airbrush" tool creates paint splatters in the form of different sized randomly placed circles.
 
 For the last tool, I reused the behaviour of the first pen version mentioned above and also connected all the dots with lines of varying line weights. It is a more unpredictable version of the normal pen tool.
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
