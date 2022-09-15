@@ -23,5 +23,5 @@ As a first task to get into p5.js again, I tried to program the Wall Drawing sho
 This worked out surprisingly fast and I even had the time to animate it with every point individually moving around the canvas.
 
 {% raw %}
-<iframe href="content/day01/01/embed.html" src="content/day01/01/embed.html" width="100%" height="450px" frameborder="no"></iframe>
+<iframe href="https://haebel7.github.io/gencg_h2201/content/day01/01/embed.html" src="content/day01/01/embed.html" width="100%" height="450px" frameborder="no"></iframe>
 {% endraw %}
