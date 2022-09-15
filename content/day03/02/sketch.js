@@ -35,7 +35,6 @@ function setup() {
   density = 1;
   offsetX = width / 2;
   offsetY = height / 2;
-
 }
 
 function draw() {
@@ -44,6 +43,7 @@ function draw() {
   strokeWeight(strokeW);
   stroke(0, 0, 0);
   noStroke();
+  scale(0.5);
 
   for (let i = 0; i < 1000; i++) {
     col.r += 0.3;
