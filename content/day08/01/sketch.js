@@ -6,17 +6,17 @@ let bgColor = (200, 200, 200);
 let originX;
 let originY;
 
-let numOfPortraits = 4;
+let numOfPortraits = 2;
 let portraitSize;
 
 let rm;
 
 let loopCount = 0;
 
-let img;
-function preload() {
+//let img;
+/*function preload() {
   img = loadImage('blank.jpg');
-}
+}*/
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
