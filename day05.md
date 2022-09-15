@@ -14,4 +14,4 @@ Nonetheless, I still think the insight into the code was very interesting.
 {% endraw %}
 
 ### Reflection
-All in all I think the first week went very good, and I am satisfied with most of the things that I created.
+Looking back, I think the first week went very good and I am satisfied with most of the things that I created.

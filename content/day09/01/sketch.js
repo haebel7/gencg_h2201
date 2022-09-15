@@ -6,7 +6,7 @@ let bgColor = (200, 200, 200);
 let originX;
 let originY;
 
-let numOfPortraits = 4;
+let numOfPortraits = 2;
 let portraitSize;
 
 let rm;
@@ -21,6 +21,7 @@ function setup() {
   frameRate(15);
 
   portraitSize = width / numOfPortraits;
+
   rm = portraitSize / 600;
 
   strokeW = 2 * rm;
@@ -259,11 +260,13 @@ function createFace() {
   let rightBrowTilt1 = random(-60, 60) * rm;
   let rightBrowTilt2 = random(-60, 60) * rm;
 
+  let browLength = random(55, 65) * rm;
+
   // left brow fill
   if (leftBrowTilt1 <= 0 || leftBrowTilt2 <= 0) {
-    x1 = originX - 60 * rm;
+    x1 = originX - browLength;
     y1 = originY + leftBrowHeight1 + 200 * rm;
-    x2 = originX - 60 * rm;
+    x2 = originX - browLength;
     y2 = originY - leftBrowHeight1;
     x3 = originX - 10 * rm;
     y3 = originY - leftBrowHeight2;
@@ -274,9 +277,9 @@ function createFace() {
 
   // right brow fill
   if (rightBrowTilt1 <= 0 || rightBrowTilt2 <= 0) {
-    x1 = originX + 60 * rm;
+    x1 = originX + browLength;
     y1 = originY + rightBrowHeight1 + 200 * rm;
-    x2 = originX + 60 * rm;
+    x2 = originX + browLength;
     y2 = originY - rightBrowHeight1;
     x3 = originX + 10 * rm;
     y3 = originY - rightBrowHeight2;
@@ -291,9 +294,9 @@ function createFace() {
   // brow left
   strokeWeight(random(2, 10) * rm);
 
-  x1 = originX - 60 * rm;
+  x1 = originX - browLength;
   y1 = originY + leftBrowHeight1 + leftBrowTilt1;
-  x2 = originX - 60 * rm;
+  x2 = originX - browLength;
   y2 = originY - leftBrowHeight1;
   x3 = originX - 10 * rm;
   y3 = originY - leftBrowHeight2;
@@ -302,10 +305,9 @@ function createFace() {
   curve(x1, y1, x2, y2, x3, y3, x4, y4);
 
   // brow right
-
-  x1 = originX + 60 * rm;
+  x1 = originX + browLength;
   y1 = originY + rightBrowHeight1 + rightBrowTilt1;
-  x2 = originX + 60 * rm;
+  x2 = originX + browLength;
   y2 = originY - rightBrowHeight1;
   x3 = originX + 10 * rm;
   y3 = originY - rightBrowHeight2;
@@ -331,30 +333,53 @@ function createFace() {
   curve(x1, y1, x2, y2, x3, y3, x4, y4);
 
   // nostril
-  x1 = originX + 30 * rm;
+  let nostrilPos = random(10, 15) * rm;
+  let nostrilWidth = random(10, 50) * rm;
+  let nostrilHeight = random(10, 15) * rm;
+
+  x1 = originX + nostrilWidth + 20 * rm;
   y1 = originY + noseSize;
-  x2 = originX - 10 * rm;
+  x2 = originX - nostrilPos;
   y2 = originY + noseSize;
-  x3 = originX - 10 * rm;
-  y3 = originY + noseSize - 10 * rm;
-  x4 = originX + 10 * rm;
-  y4 = originY + noseSize - 10 * rm;
+  x3 = originX - nostrilPos;
+  y3 = originY + noseSize - nostrilHeight;
+  x4 = originX + nostrilWidth;
+  y4 = originY + noseSize - nostrilHeight;
   curve(x1, y1, x2, y2, x3, y3, x4, y4);
 
   // mouth
   let mouthHeight1 = random(noseSize + 5 * rm, 110 * rm);
   let mouthHeight2 = random(noseSize + 5 * rm, 110 * rm);
   let mouthWidth = random(20, 50) * rm;
+  let mouthExpression;
+  if (random() < 0.5) {
+    mouthExpression = random(0, 100) * rm;
+  } else {
+    mouthExpression = 0;
+  }
 
   x1 = originX - 150 * rm;
-  y1 = originY;
+  y1 = originY + mouthExpression;
   x2 = originX - mouthWidth;
   y2 = originY + mouthHeight1;
   x3 = originX + mouthWidth;
   y3 = originY + mouthHeight2;
   x4 = originX + 150 * rm;
-  y4 = originY;
+  y4 = originY + mouthExpression;
   curve(x1, y1, x2, y2, x3, y3, x4, y4);
+
+  // open mouth
+  if (random() < 0.5) {
+    x1 = originX - 150 * rm;
+    y1 = originY + mouthExpression - 80 * rm;
+    x2 = originX - mouthWidth;
+    y2 = originY + mouthHeight1;
+    x3 = originX + mouthWidth;
+    y3 = originY + mouthHeight2;
+    x4 = originX + 150 * rm;
+    y4 = originY + mouthExpression - 80 * rm;
+    curve(x1, y1, x2, y2, x3, y3, x4, y4);
+  }
 
 
   strokeWeight(strokeW - 0.2 * rm);
@@ -399,7 +424,7 @@ function createFace() {
     curve(x1, y1, x2, y2, x3, y3, x4, y4);
   }
 
-  if (random() < 0.5) {
+  if (random() < 0.7 && mouthExpression == 0) {
     // upper lip
     let upperLipHeight = (mouthHeight1 + mouthHeight2) / 2;
     let upperLipWidth = random(5, 5) * rm;
@@ -465,5 +490,54 @@ function createFace() {
     curve(x1, y1, x2, y2, x3, y3, x4, y4);
   }
 
+  if (random() < 0.5) {
+    // temple left
+    x1 = originX - outerEyeWidth - 30 * rm;
+    y1 = originY - eyeHeight - outerEyeHeight - 60 * rm;
+    x2 = originX - outerEyeWidth - 15 * rm;
+    y2 = originY - eyeHeight - outerEyeHeight - 40 * rm;
+    x3 = originX - outerEyeWidth - 20 * rm;
+    y3 = originY - eyeHeight - outerEyeHeight - 20 * rm;
+    x4 = originX - outerEyeWidth - 50 * rm;
+    y4 = originY - eyeHeight - outerEyeHeight - 10 * rm;
+    curve(x1, y1, x2, y2, x3, y3, x4, y4);
 
+    // temple right
+    x1 = originX + outerEyeWidth + 30 * rm;
+    y1 = originY - eyeHeight - outerEyeHeight - 60 * rm;
+    x2 = originX + outerEyeWidth + 15 * rm;
+    y2 = originY - eyeHeight - outerEyeHeight - 40 * rm;
+    x3 = originX + outerEyeWidth + 20 * rm;
+    y3 = originY - eyeHeight - outerEyeHeight - 20 * rm;
+    x4 = originX + outerEyeWidth + 50 * rm;
+    y4 = originY - eyeHeight - outerEyeHeight - 10 * rm;
+    curve(x1, y1, x2, y2, x3, y3, x4, y4);
+  }
+
+  if (random() < 0.3) {
+    let foreheadHeight = max(leftBrowHeight1, leftBrowHeight2, rightBrowHeight1, rightBrowHeight2) + 20 * rm;
+    let foreheadWidth = random(40, 50) * rm;
+
+    // forehead wrinkle 1
+    x1 = originX - 150 * rm;
+    y1 = originY;
+    x2 = originX - foreheadWidth;
+    y2 = originY - foreheadHeight;
+    x3 = originX + foreheadWidth;
+    y3 = originY - foreheadHeight;
+    x4 = originX + 150 * rm;
+    y4 = originY;
+    curve(x1, y1, x2, y2, x3, y3, x4, y4);
+
+    // forehead wrinkle 2
+    x1 = originX - 150 * rm;
+    y1 = originY;
+    x2 = originX - foreheadWidth + 10 * rm;;
+    y2 = originY - foreheadHeight - 10 * rm;
+    x3 = originX + foreheadWidth - 10 * rm;;
+    y3 = originY - foreheadHeight - 10 * rm;
+    x4 = originX + 150 * rm;
+    y4 = originY;
+    curve(x1, y1, x2, y2, x3, y3, x4, y4);
+  }
 }

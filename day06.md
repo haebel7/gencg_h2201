@@ -23,6 +23,7 @@ The different facial features consist of single or multiple curves. The eyebrows
 
 ### Randomizing the Face
 Working off of the created base template, I then started messing around with random values influencing the existing curves. The random values all have a set range which determines the maximum extremity of the changes. The different facial features are also partially affected by each others position, so that I can for example avoid the mouth clipping into the nose. Adding to this, I also created multiple optional facial features, such as visible cheekbones or eyebags. These features have a reduced chance of appearing on the face.
+
 Through these changes, I already have a way to generate many different looking faces (Try refreshing the page to generate another face):
 
 {% raw %}

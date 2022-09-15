@@ -3,7 +3,7 @@
 ## Patterns
 
 ### First Pattern
-For the first pattern I started to look for inspiration in some of the available examples.
+For the first pattern, I started to look for inspiration in some of the available examples.
 Eventually, I came across this maze pattern that consists of multiple connecting tubes:
 
 ![Inspiration Pattern](content/day02/example.png)
