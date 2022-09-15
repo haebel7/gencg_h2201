@@ -33,7 +33,7 @@ function setup() {
 
 function draw() {
   clear();
-  background(255, 255, 255);
+  background(255);
   for (let j = 0; j < height / portraitSize - 1; j++) {
     for (let i = 0; i < numOfPortraits; i++) {
       //image(img, i * portraitSize, j * portraitSize, portraitSize, portraitSize);
