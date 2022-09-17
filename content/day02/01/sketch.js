@@ -13,7 +13,6 @@ function setup() {
   angleMode(DEGREES);
   frameRate(3);
   noLoop();
-  //noSmooth();
 
   strokeW = 0;
   density = 1;
@@ -29,6 +28,7 @@ function draw() {
   strokeWeight(strokeW);
   stroke(0, 0, 0);
 
+  // building up the grid
   for (let i = 0; i < numberOfTilesX; i++) {
     for (let j = 0; j < numberOfTilesY; j++) {
       drawTile(i * tileSize, j * tileSize, tileSize);
@@ -36,9 +36,8 @@ function draw() {
   }
 }
 
+// function that fills every individual tile of the pattern with the randomly selected rectangles
 function drawTile(coordX, coordY, size) {
-  //fill(255, 255, 255);
-  //square(coordX, coordY, size);
   fill(255, 255, 255);
   let randoo;
   randoo = Math.random();

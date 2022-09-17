@@ -14,26 +14,25 @@ let rotatione = 0;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  //noSmooth();
   background(bgColor);
 
   strokeW = 2;
+  // Set initial drawing coordinates to middle
   originPointX = width / 2;
   originPointY = height / 2;
 }
 
 function draw() {
+  // Randomly add/remove amount of the drawing coordinates, making it move unpredictably
   drawDistanceX = drawDistanceX + randomBetweenNumbers(5, -5);
   drawDistanceY = drawDistanceY + randomBetweenNumbers(5, -5);
 }
 
+// Create points at the random coordinates when the mouse is dragged
 function mouseDragged() {
   strokeWeight(strokeW);
   stroke(0, 0, 0);
   point(originPointX + drawDistanceX, originPointY + drawDistanceY, 2);
-  /*if (drawDistance > 255) {
-    drawDistance = 0;
-  }*/
 }
 
 function mousePressed() {

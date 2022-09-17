@@ -33,9 +33,11 @@ function draw() {
       line(originsX[i], originsY[i], originsX[j], originsY[j]);
     }
 
+    // Moving the points depending on their speed
     originsX[i] = originsX[i] + speedsX[i];
     originsY[i] = originsY[i] + speedsY[i];
 
+    // CHange direction when hitting border of screen
     if (originsX[i] > width) {
       speedsX[i] = -standardSpeedX - Math.random() * 2;
     }
@@ -51,6 +53,7 @@ function draw() {
   }
 }
 
+// Function that generates a given number of points to be connected with each other. Each starts at a random position with a random speed
 function generatePoints(number) {
   for (let i = 0; i < number; i++) {
     originsX.push(random() * width);

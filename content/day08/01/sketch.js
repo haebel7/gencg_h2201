@@ -9,23 +9,20 @@ let originY;
 let numOfPortraits = 2;
 let portraitSize;
 
+// size modifier for facial features
 let rm;
 
 let loopCount = 0;
 
-//let img;
-/*function preload() {
-  img = loadImage('blank.jpg');
-}*/
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  //noSmooth();
   noLoop();
   frameRate(15);
 
+  // Determining size of each portrait from the given number of portaits
   portraitSize = width / numOfPortraits;
+  // Determining size modifier for facial features from portrait size
   rm = portraitSize / 600;
 
   strokeW = 2 * rm;
@@ -34,29 +31,30 @@ function setup() {
 function draw() {
   clear();
   background(255);
+  // Drawing the determined number of portraits, creating more rows if there is space
   for (let j = 0; j < height / portraitSize - 1; j++) {
     for (let i = 0; i < numOfPortraits; i++) {
-      //image(img, i * portraitSize, j * portraitSize, portraitSize, portraitSize);
       originX = i * portraitSize + portraitSize / 2;
       originY = j * portraitSize + portraitSize / 2;
       createFace();
     }
   }
+  // Stopping the small "face change animation" after cycling through 5 random faces
   if (loopCount > 5) {
     noLoop();
   }
   loopCount++;
 }
 
+// Starting small animation, changing the faces
 function mouseClicked() {
   loopCount = 0;
   loop();
 }
 
+// Drawing curves with varying different points, creating a head. Some of the values are randomly chosen between a given range
+// Certain features, like eye bags, have a smaller chance of being drawn at all
 function createFace() {
-  //background(bgColor);
-  //image(img, 0, 0, width, height);
-
   let x1, y1, x2, y2, x3, y3, x4, y4;
 
   fill(255, 255, 255);
@@ -469,6 +467,4 @@ function createFace() {
     y4 = originY + noseSize - 10 * rm;
     curve(x1, y1, x2, y2, x3, y3, x4, y4);
   }
-
-
 }

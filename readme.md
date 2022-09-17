@@ -1,6 +1,6 @@
 # Day 01
 
-## Computing without computer
+## Computing without Computer
 
 ### Sprouts
 The very first game I tried out was the "Sprouts" game, competing against someone else:

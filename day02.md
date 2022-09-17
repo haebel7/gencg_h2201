@@ -29,6 +29,8 @@ Finally, I wanted to add an interactable element so the user could click differe
 <iframe src="content/day02/03/embed.html" width="100%" height="450px" frameborder="no"></iframe>
 {% endraw %}
 
+[Fullscreen Version](content/day02/03/embed.html)
+
 ### Working in 3D
 For the second pattern, I wanted to do something with in 3D with WebGL. I also started with creating a grid which can be resized through a given tile size variable. This time, I filled it with cubes. Making them rotate on one axis already resulted in a somewhat interesting animation.
 
@@ -40,14 +42,20 @@ Adding the p5js "normal material" to the cubes created this colorful result:
 <iframe src="content/day02/06/embed.html" width="100%" height="450px" frameborder="no"></iframe>
 {% endraw %}
 
+[Fullscreen Version](content/day02/06/embed.html)
+
 Here with alternating direction of the rotation and an orthographic camera view:
 
 {% raw %}
 <iframe src="content/day02/05/embed.html" width="100%" height="450px" frameborder="no"></iframe>
 {% endraw %}
 
+[Fullscreen Version](content/day02/05/embed.html)
+
 Afterwards, I started to play with the light source and how the cubes are illuminated by it. My experimentation ended in this moving pattern. The user can even interact with it, because the mouse also moves the light source around.
 
 {% raw %}
 <iframe src="content/day02/04/embed.html" width="100%" height="450px" frameborder="no"></iframe>
 {% endraw %}
+
+[Fullscreen Version](content/day02/04/embed.html)

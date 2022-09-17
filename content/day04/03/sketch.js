@@ -22,13 +22,13 @@ let paintMode = 2;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  //noSmooth();
   background(230, 230, 230);
 
+  // Set initial drawing coordinates to middle
   originPointX = width / 2;
   originPointY = height / 2;
 
-  // Paper Grid
+  // Create paper grid pattern
   strokeWeight(0.5);
   stroke(0, 0, 0);
   for (let i = 1; i < height / paperLineDistance + 1; i++) {
@@ -44,6 +44,7 @@ function draw() {
 
 }
 
+// Drawing in the current paint mode when mouse is dragged
 function mouseDragged() {
   // Chaos Pen
   if (paintMode == 0) {
@@ -82,6 +83,7 @@ function mouseDragged() {
   }
 }
 
+// Choose the cursor location as a new starting point to draw from when the mouse is clicked
 function mousePressed() {
   drawDistanceX = 0;
   drawDistanceY = 0;
@@ -93,10 +95,12 @@ function mousePressed() {
   lastMouseY = 0;
 }
 
+// Function reacting to the color changer
 function changeColor(newColor) {
   stroke(newColor);
 }
 
+// Function reacting to the tool dropdown menu, changing the paint mode accordingly
 function changeTool(newTool) {
   switch (newTool) {
     case "Pen":
@@ -111,6 +115,7 @@ function changeTool(newTool) {
   }
 }
 
+// Function reacting to the download button, saving the canvas
 function downloadCanvas() {
   saveCanvas("Artwork");
 }

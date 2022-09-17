@@ -35,7 +35,9 @@ function draw() {
   strokeWeight(strokeW);
   stroke(0, 0, 0);
 
+  // building up the grid
   for (let i = 0; i < numberOfTilesX; i++) {
+    // slightly changing color with every column, creating a gradient
     colorModifier += colorIncrement;
     for (let j = 0; j < numberOfTilesY; j++) {
       drawTile(i * tileSize, j * tileSize);
@@ -43,9 +45,8 @@ function draw() {
   }
 }
 
+// function that fills every individual tile of the pattern with the randomly selected rectangles
 function drawTile(coordX, coordY) {
-  //fill(255, 255, 255);
-  //square(coordX, coordY, tileSize);
   fill((40 + colorModifier) % 100, 100, 100);
   let randoo;
   randoo = Math.random();

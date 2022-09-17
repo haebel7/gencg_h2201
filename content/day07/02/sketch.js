@@ -1,15 +1,15 @@
-// Variables declaration
+// Original pixelated camera code: https://codepen.io/gu-ma/pen/LggyKa
+
 let video;
 let canvas;
 let step_row, step_col;
 
+// Animation zoom factor
 let zoomFactor = 1;
 let secondAlpha = 0;
 
 // Setup the sketch
 function setup() {
-
-  //translate(width / -2, height / -2);
 
   // Width and height of rows and columns in our grid
   step_row = 10;
@@ -40,36 +40,34 @@ function setup() {
 
 // Main draw loop
 function draw() {
+  // Increasing zoom every frame
   zoomFactor = zoomFactor * 1.005;
   secondAlpha += 1;
+  // Resetting zoom factor, looping the animation
   if (zoomFactor > 25) {
     zoomFactor = 1;
     secondAlpha = 0;
   }
 
+  // Scaling whole canvas depending on zoom factor
   translate(width / 2, height / 2);
   scale(zoomFactor);
-  //console.log(zoomFactor);
-
 
   // Draw the background 
   background(255);
   // Load the pixels from the webcam into an array called `pixels`
   video.loadPixels();
 
-  /*for (let i = 0; i < 9; i++) {
-    video.get(0, 0, 250, 250)
-  }*/
-
   // Draw the pixels
   let s = 6;
-  let x = /*width / 2*/0 - (video.width * s) / 2;
-  let y = /*height / 2*/0 - (video.height * s) / 2;
+  let x = 0 - (video.width * s) / 2;
+  let y = 0 - (video.height * s) / 2;
   drawPixels(video.pixels, x, y, s, video.get(0, 0, 250, 250), 255);
 
+  // Second, smaller version to zoom into
   s = 0.24;
-  x = /*width / 2*/0 - (video.width * s) / 2;
-  y = /*height / 2*/0 - (video.height * s) / 2;
+  x = 0 - (video.width * s) / 2;
+  y = 0 - (video.height * s) / 2;
   drawPixels(video.pixels, x, y, s, video.get(0, 0, 250, 250), 255);
 
 }
@@ -92,7 +90,7 @@ function drawPixels(pixels, x, y, s, img, alpha) {
       let r = pixels[i];
       let g = pixels[i + 1];
       let b = pixels[i + 2];
-      let a = alpha;//pixels[i + 3];
+      let a = alpha;
       // Use the color from a pixel to draw a rectangle
       fill(r, g, b, a);
       noStroke();
@@ -101,9 +99,8 @@ function drawPixels(pixels, x, y, s, img, alpha) {
       let h = step_row * 2;
       //rectMode(CENTER);
 
-      //tint(255, alpha)
+      // Drawing current frame of camera feed, multiplying the color with the RGB values determined earlier
       image(img, x, y, w / 2, h / 2);
-      //noTint();
       blendMode(MULTIPLY);
       rect(x, y, w / 2, h / 2);
       blendMode(BLEND);
@@ -111,25 +108,6 @@ function drawPixels(pixels, x, y, s, img, alpha) {
   }
   pop();
 }
-
-// This function listen to the keys pressed on the keyboard
-/*function keyPressed() {
-  // Left / right arrows control the number of columns
-  if (keyCode === LEFT_ARROW) step_col = (step_col > 0) ? step_col - 1 : 0;
-  if (keyCode === RIGHT_ARROW) step_col = (step_col < 20) ? step_col + 1 : 20;
-  // up / down arrows control the number of rows
-  if (keyCode === UP_ARROW) step_row = (step_row > 0) ? step_row - 1 : 0;
-  if (keyCode === DOWN_ARROW) step_row = (step_row < 20) ? step_row + 1 : 20;
-  // Save image
-  if (key == 's' || key == 'S') saveImg(width, height);
-}
-
-// Save Image
-function saveImg(w, h) {
-  let img = get(width / 2 - w / 2, height / 2 - h / 2, w, h);
-  let file_name = Date.now().toString() + ".jpg";
-  save(img, file_name);
-}*/
 
 // Resize the canvas when the window is resized
 function windowResized() {

@@ -7,6 +7,7 @@ let bgColor = (200, 200, 200);
 let originX;
 let originY;
 
+// Blank face template
 let img;
 function preload() {
   img = loadImage('blank.jpg');
@@ -25,6 +26,7 @@ function setup() {
   originY = height / 2;
 }
 
+// Drawing curves with varying different points, creating the wanted facial features
 function draw() {
   background(bgColor);
   image(img, 0, 0, width, height);

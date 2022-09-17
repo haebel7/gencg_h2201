@@ -1,4 +1,5 @@
-// Variables declaration
+// Original pixelated camera code: https://codepen.io/gu-ma/pen/LggyKa
+
 let video;
 let canvas;
 let step_row, step_col;
@@ -67,7 +68,7 @@ function drawPixels(pixels, x, y, s, img) {
         let r = pixels[i];
         let g = pixels[i + 1];
         let b = pixels[i + 2];
-        let a = 255;//pixels[i + 3];
+        let a = 255;
         // Use the color from a pixel to draw a rectangle
         fill(r, g, b, a);
         noStroke();
@@ -76,8 +77,7 @@ function drawPixels(pixels, x, y, s, img) {
         let h = step_row * 2;
         //rectMode(CENTER);
 
-        //tint(r, g, b);
-        //img.resize(50, 50);
+        // Drawing current frame of camera feed, multiplying the color with the RGB values determined earlier
         image(img, x, y, w / 2, h / 2);
         blendMode(MULTIPLY);
         rect(x, y, w / 2, h / 2);
@@ -86,25 +86,6 @@ function drawPixels(pixels, x, y, s, img) {
     }
   pop();
 }
-
-// This function listen to the keys pressed on the keyboard
-/*function keyPressed() {
-  // Left / right arrows control the number of columns
-  if (keyCode === LEFT_ARROW) step_col = (step_col > 0) ? step_col - 1 : 0;
-  if (keyCode === RIGHT_ARROW) step_col = (step_col < 20) ? step_col + 1 : 20;
-  // up / down arrows control the number of rows
-  if (keyCode === UP_ARROW) step_row = (step_row > 0) ? step_row - 1 : 0;
-  if (keyCode === DOWN_ARROW) step_row = (step_row < 20) ? step_row + 1 : 20;
-  // Save image
-  if (key == 's' || key == 'S') saveImg(width, height);
-}
-
-// Save Image
-function saveImg(w, h) {
-  let img = get(width / 2 - w / 2, height / 2 - h / 2, w, h);
-  let file_name = Date.now().toString() + ".jpg";
-  save(img, file_name);
-}*/
 
 // Resize the canvas when the window is resized
 function windowResized() {

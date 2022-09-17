@@ -20,8 +20,6 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   frameRate(8);
-  //noLoop();
-  //noSmooth();
 
   colorMode(HSB, 100);
 
@@ -35,7 +33,9 @@ function setup() {
   strokeWeight(strokeW);
   stroke(255, 255, 255);
 
+  // building up the grid, in the setup, so that the same one can be reused later
   for (let i = 0; i < numberOfTilesX; i++) {
+    // slightly changing color with every column, creating a gradient
     colorModifier += colorIncrement;
     for (let j = 0; j < numberOfTilesY; j++) {
       addTile(i * tileSize, j * tileSize);
@@ -46,15 +46,9 @@ function setup() {
 function draw() {
   background(bgColor);
   drawTiles();
-
-  /*fill((startColor + colorModifier) % 100, 100, 100);
-  square(0, 0, tileSize);
-  rect(0 + tileSize / 8 * 3, 0, tileSize / 4, tileSize / 2);
-  rect(0 + tileSize / 2, 0 + tileSize / 8 * 3, tileSize / 2, tileSize / 4);
-  rect(0 + tileSize / 8 * 3, 0 + tileSize / 8 * 4, tileSize / 4, tileSize / 2);
-  rect(0, 0 + tileSize / 8 * 3, tileSize / 2, tileSize / 4);*/
 }
 
+// generating a new tile in the tiles array
 function addTile(coordX, coordY) {
   let tile = {
     x: coordX,
@@ -68,6 +62,7 @@ function addTile(coordX, coordY) {
   tiles.push(tile);
 }
 
+// function that fills every individual tile of the pattern according to the tiles array
 function drawTiles() {
   tiles.forEach(tile => {
     fill(tile.fill, 100, 100);
@@ -90,6 +85,7 @@ function drawTiles() {
   });
 }
 
+// rotate tile on mouse click
 function mouseClicked() {
   tiles.forEach(tile => {
     if (tile.x + tileSize > mouseX && tile.x < mouseX && tile.y + tileSize > mouseY && tile.y < mouseY) {
@@ -98,6 +94,7 @@ function mouseClicked() {
   });
 }
 
+// "rotating" a tile by switching which rectangles are displayed (upper rectangle becomes the right one, right rectangle becomes the bottom one, etc)
 function rotateTile(tile) {
   let backup = tile.up;
   tile.up = tile.left;

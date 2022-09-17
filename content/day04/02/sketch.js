@@ -17,13 +17,13 @@ let rotatione = 0;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  //noSmooth();
   background(230, 230, 230);
 
+  // Set initial drawing coordinates to middle
   originPointX = width / 2;
   originPointY = height / 2;
 
-  // Paper Grid
+  // Create paper grid pattern
   strokeWeight(0.5);
   stroke(0, 0, 0);
   for (let i = 1; i < height / paperLineDistance + 1; i++) {
@@ -41,17 +41,19 @@ function draw() {
 
 function mouseDragged() {
   strokeWeight(2);
-  //point(originPointX + drawDistanceX, originPointY + drawDistanceY, 2);
+  // Draw lines between the randomly changing drawing coordinates when the mouse is dragged
   if (lastPointX != 0) {
     line(lastPointX, lastPointY, originPointX + drawDistanceX, originPointY + drawDistanceY, 2);
   }
   lastPointX = originPointX + drawDistanceX;
   lastPointY = originPointY + drawDistanceY;
 
+  // Randomly add/remove amount of the drawing coordinates, making it move unpredictably
   drawDistanceX = drawDistanceX + randomBetweenNumbers(10, -10);
   drawDistanceY = drawDistanceY + randomBetweenNumbers(10, -10);
 }
 
+// Choose a random new starting point to draw from when the mouse is clicked
 function mousePressed() {
   drawDistanceX = 0;
   drawDistanceY = 0;
@@ -61,6 +63,7 @@ function mousePressed() {
   lastPointY = 0;
 }
 
+// Function reacting to the color changer
 function changeColor(newColor){
   stroke(newColor);
 }
